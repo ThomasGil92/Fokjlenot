@@ -1,77 +1,90 @@
-html{
+html {
   scroll-behavior: smooth;
 }
 body {
   scroll-behavior: smooth;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-    
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.todoTitleFont{
-  font-family: 'Baloo 2', cursive;
+.todoTitleFont {
+  font-family: "Baloo 2", cursive;
 }
-span{
-  vertical-align:sub;
+span {
+  vertical-align: sub;
 }
-.btn.todo-btn-cat{
-  display:inline;
-  vertical-align:sub;
+.btn.todo-btn-cat {
+  display: inline;
+  vertical-align: sub;
 }
-p.lead{
-  font-family: 'Baloo 2', cursive;
+p.lead {
+  font-family: "Baloo 2", cursive;
 }
 
-p{
-  margin-bottom:0;
-  font-family: 'Baloo 2', cursive;
+p {
+  margin-bottom: 0;
+  font-family: "Baloo 2", cursive;
 }
-#legal p{
-  margin-bottom:1em;
+#legal p {
+  margin-bottom: 1em;
 }
-.home-cookie-fix{
-  bottom:0px;
-  left:0px;
-  margin:0;
+.home-cookie-fix {
+  bottom: 0px;
+  left: 0px;
+  margin: 0;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.mySpecialFont{
-  font-family: 'Rock Salt', cursive;
-  font-size: 1.3em;
-  color:#03224c !important;
+.mySpecialFont {
+  font-family: "Rock Salt", cursive;
+  font-size: 1em;
+  color: #03224c !important;
 }
-.text-fokjlenot{
-  color:#03224c!important;
+.text-fokjlenot {
+  color: #03224c !important;
 }
-#todosList{
-  height: 100vh!important;
+#todosList {
+  height: 100vh !important;
 }
-.bg-orange{
-  background-color:/* #FF6347 */white
+.bg-orange {
+  background-color:/* #FF6347 */ white;
 }
-.todo-card{
+.todo-card {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.todo-btn-cat{
+.todo-btn-cat {
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-.rc-anchor-normal{
-  width:100%!important;
+.rc-anchor-normal {
+  width: 100% !important;
 }
-#g-recaptcha div:first-child,body{
-  width:100%!important
+#g-recaptcha div:first-child,
+body {
+  width: 100% !important;
 }
-
+#landing-header {
+  min-width: 100%;
+  background-size: 100% 100%;
+}
+@media screen and (min-width: 1024px) {
+  #landing-header {
+    min-height: 650px;
+    background-size: cover;
+  }
+  .mySpecialFont {
+    font-size: 1.3em;
+  }
+}

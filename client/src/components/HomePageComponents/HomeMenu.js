@@ -32,14 +32,14 @@ const HomeMenu = () => {
 
     return (
         <nav id="homeTop" className="navbar navbar-light d-flex justify-content-between text-center position-absolute w-100 bg-white" style={{ left: "0", top: '0', zIndex: "10", boxShadow: "0px 0px 20px black" }}>
-            <div className="col-md-3">
+            <div className="d-none d-md-block col-md-3">
                 <p className="text-dark mb-0 py-1 text-left" >bêta V2.0</p>
             </div>
             <div className="col-md-6">
                 <h1 className="text-white mb-0 py-1 mx-auto "><Link className="navbar-brand mySpecialFont" to={"/"}>Fokjlenot</Link></h1>
             </div>
             {sessionStorage.getItem('jwt') || localStorage.getItem('jwt') ? (
-                <div className="col-md-3 text-right todoTitleFont">
+                <div className="col-6 col-md-3 mx-auto mx-md-0 text-md-right ml-md-auto my-2 my-md-0 todoTitleFont">
                     <button onClick={signoutClick} className="btn btn-outline-dark mb-0 py-1" >Déconnexion</button>
                 </div>
             ) : (

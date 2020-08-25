@@ -86,8 +86,8 @@ const SigninForm = (props) => {
         )
     } else {
         return (
-            <div className="row m-0 h-100 justify-content-center text-center bg-orange d-flex align-items-center">
-                <form className='col-4'>
+            <div className="row mt-5 mt-md-0 h-100 justify-content-center text-center bg-orange d-flex align-items-center">
+                <form className='col-12 col-md-4'>
                     <h2>Connexion</h2>
                     <div className="form-group">
                         <label className="text-muted">
@@ -115,7 +115,7 @@ const SigninForm = (props) => {
                     <Alert />
                     <div className=" d-flex align-items-center">
 
-                        <Link to="/signup" className="text-dark ml-auto mt-2">Pas encore inscrit?</Link>
+                        <Link to="/signup" className="text-dark mx-auto mt-2 mt-md-4">Pas encore inscrit?</Link>
                     </div>
 
                 </form>
