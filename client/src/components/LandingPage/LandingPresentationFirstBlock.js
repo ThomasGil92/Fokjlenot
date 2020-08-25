@@ -9,7 +9,7 @@ const LandingPresentationFirstBlock = () => {
                     style={{ backgroundColor: `rgb(3,34,76,0.1)`,boxShadow: "5px 5px 10px rgb(3,34,76,0.3)" }}
                 >
                     <div className="card py-2 col-md-8 px-0">
-                        <img className="mx-auto" style={{ height: "140px", width: "220px" }} src="https://fokjlenot.herokuapp.com/img/Capture.JPG" />
+                        <img className="mx-auto" style={{ height: "140px", width: "220px" }} src="./img/capture.JPG" />
                     </div>
 
                 </div>

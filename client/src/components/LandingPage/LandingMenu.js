@@ -27,7 +27,7 @@ const LandingMenu = () => {
     return (
         <nav id="landingTop" className="navbar navbar-light d-flex justify-content-between text-center position-absolute w-100 bg-orange" style={{ left: "0", top: '0', zIndex: "10", boxShadow: "0px 0px 20px black" }}>
             <div className="col-md-3 text-left">
-                <p className="text-dark mb-0 py-1" >bêta V1.0</p>
+                <p className="text-dark mb-0 py-1" >bêta V2.0</p>
             </div>
             <div className="col-md-4">
                 {/* <h1 className="text-white mb-0 py-1 mx-auto "><Link className="navbar-brand mySpecialFont mr-0" to={"/"}>Fokjlenot</Link></h1> */}
