@@ -25,7 +25,7 @@ const LandingMenu = () => {
         window.location.reload();
     }
     return (
-        <nav id="landingTop" className="navbar navbar-light d-flex justify-content-between text-center position-absolute w-100 bg-orange" style={{ left: "0", top: '0', zIndex: "10", boxShadow: "0px 0px 20px black" }}>
+        <nav id="landingTop" className="navbar navbar-light d-flex justify-content-between text-center position-absolute col-12 bg-orange" style={{ left: "0", top: '0', zIndex: "10", boxShadow: "0px 0px 20px black" }}>
             <div className="d-none d-md-block col-md-2 md-text-right">
                 <p className="text-dark mb-0 py-1" >bêta V2.0</p>
             </div>

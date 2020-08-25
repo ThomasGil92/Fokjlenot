@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import { setAlert, supressTodoById } from '../../actions'
-import { suppressProjectById,clearProjects, getProjects } from '../../actions/project'
-import { getUserInfos, setUserInfos,deleteProjectFromRepo } from '../../actions/user'
+import { suppressProjectById, clearProjects, getProjects } from '../../actions/project'
+import { getUserInfos, setUserInfos, deleteProjectFromRepo } from '../../actions/user'
 import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Modal, Button } from 'react-bootstrap'
@@ -21,40 +21,40 @@ const RemoveProjectButton = () => {
                 supressTodoById(todo._id, JSON.parse(sessionStorage.getItem('jwt')).token, JSON.parse(sessionStorage.getItem('jwt')).user._id)
             }))
             deleteProjectFromRepo(JSON.parse(sessionStorage.getItem('jwt')).user._id, response).then(data => {
-                
-                    dispatch(clearProjects())
-                    if (sessionStorage.getItem('jwt')) {
-                        getUserInfos(JSON.parse(sessionStorage.getItem('jwt')).user._id).then(user => {
-                            console.log(user)
-                            dispatch(setUserInfos(user))
-                            if (user.projectsId) {
-                                user.projectsId.forEach(projectItem => {
-                                    dispatch(getProjects(projectItem))
-                                })
-                            }
-                        })
-                    }
-                    if (localStorage.getItem('jwt')) {
-                        getUserInfos(JSON.parse(localStorage.getItem('jwt')).user._id).then(user => {
-                            console.log(user)
-                            dispatch(setUserInfos(user))
-                            if (user.projectsId) {
-                                user.projectsId.forEach(projectItem => {
-                                    dispatch(getProjects(projectItem))
-                                })
-                            }
-                        })
-                    }
-                    dispatch(setAlert("Le projet a bien été supprimé", "success"))
 
-                    history.push("/")
-                
+                dispatch(clearProjects())
+                if (sessionStorage.getItem('jwt')) {
+                    getUserInfos(JSON.parse(sessionStorage.getItem('jwt')).user._id).then(user => {
+                        console.log(user)
+                        dispatch(setUserInfos(user))
+                        if (user.projectsId) {
+                            user.projectsId.forEach(projectItem => {
+                                dispatch(getProjects(projectItem))
+                            })
+                        }
+                    })
+                }
+                if (localStorage.getItem('jwt')) {
+                    getUserInfos(JSON.parse(localStorage.getItem('jwt')).user._id).then(user => {
+                        console.log(user)
+                        dispatch(setUserInfos(user))
+                        if (user.projectsId) {
+                            user.projectsId.forEach(projectItem => {
+                                dispatch(getProjects(projectItem))
+                            })
+                        }
+                    })
+                }
+                dispatch(setAlert("Le projet a bien été supprimé", "success"))
+
+                history.push("/")
+
             })
         })
     }
 
     return (
-        <div className=" d-inline-block">
+        <Fragment>
             {/* <button
                 className="btn btn-outline-danger mt-5"
                 data-toggle="modal"
@@ -80,7 +80,7 @@ const RemoveProjectButton = () => {
                     </div>
                 </div>
             </div> */}
-            <Button variant="white" onClick={handleShow} className="btn btn-outline-danger todoTitleFont">
+            <Button variant="white" onClick={handleShow} className="btn btn-outline-danger d-block col-12 col-md-4  mt-1 mt-md-0 todoTitleFont">
                 Supprimer ce projet <i className="fas fa-trash-alt"></i>
             </Button>
 
@@ -98,7 +98,7 @@ const RemoveProjectButton = () => {
                 </Modal.Footer>
             </Modal>
 
-        </div >
+        </Fragment>
 
     )
 }

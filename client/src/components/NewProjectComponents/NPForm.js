@@ -77,7 +77,7 @@ const NPForm = () => {
         <div className="container-fluid vh-100 d-flex align-items-center text-dark bg-orange">
             <Alert />
             <HomeMenu />
-            <div className="col-md-5 card mx-auto bg-orange border-0" >
+            <div className="col-12 col-md-5 card mx-auto bg-orange mt-5 mt-md-0 border-0" >
                 <div className="card-body">
                     <h4 className="card-title mb-4 text-center">Nouveau projet</h4>
                     <form onSubmit={handleSubmit}>
@@ -90,9 +90,10 @@ const NPForm = () => {
                         <div className="form-group mb-4">
                             <input type="date" name="dead_line" required value={project.dead_line} onChange={handleChange} className="form-control" placeholder="Date Limite" />
                         </div>
-                        <div className="d-flex justify-content-between">
-                            <Link className="d-flex text-dark align-items-center" to={"/"}><i className="fas fa-angle-double-left"></i>  Revenir à l'accueil</Link>
-                            <input type="submit" value="Démarrer Projet" className="btn btn-primary " />
+                        <div className="d-md-flex justify-content-between">
+                            <Link className="d-none d-md-block d-md-flex text-dark align-items-center" to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
+                            <input type="submit" value="Démarrer Projet" className="btn btn-primary col-12 col-md-6" />
+                            <Link className="col-12 d-md-none d-flex justify-content-center align-items-center text-dark mt-2 " to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
                         </div>
                     </form>
                 </div>
