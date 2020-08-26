@@ -76,9 +76,9 @@ code {
 body {
   width: 100% !important;
 }
-/* #landing-header {
-  
-} */
+#landing-header {
+  background-size:cover;
+}
 @media screen and (min-width: 1024px) {
   #landing-header {
     min-height:650px;
