@@ -102,13 +102,13 @@ const SigninForm = (props) => {
                         <input value={password} onChange={handleChange('password')} type="password" className="form-control" />
                     </div>
                     <div className="row p-0 m-0 align-items-center justify-content-between">
-                        <div className="form-check text-left mb-2 col-6 m-0">
+                        <div className="form-check text-left mb-2 col-7 col-md-6 m-0">
                             <input className="form-check-input" onClick={handleRememberCheck} type="checkbox" id="defaultCheck1" />
                             <label className="form-check-label" htmlFor="defaultCheck1">
                                 Se souvenir de moi
                             </label>
                         </div>
-                        <div className="col-6 text-right px-0">
+                        <div className="col-5 col-md-6 text-right px-0">
                             <button onClick={clickSubmit} className="btn btn-primary">Se Connecter</button>
                         </div>
                     </div>
