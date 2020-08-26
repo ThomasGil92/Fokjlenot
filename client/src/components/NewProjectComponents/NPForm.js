@@ -75,7 +75,7 @@ const NPForm = () => {
     };
 
     return (
-        <div className="container-fluid vh-100 d-flex align-items-center pb-4 text-dark bg-orange">
+        <div className="container-fluid vh-100 d-flex align-items-center mb-5 text-dark bg-orange">
             <Alert />
 
             <Footer anchor={"#homeTop"} />

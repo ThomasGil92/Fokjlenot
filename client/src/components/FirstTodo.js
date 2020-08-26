@@ -70,8 +70,8 @@ const FirstTodo = () => {
             <Alert />
 
             <Cookie />
-            <div className="row vw-100">
-                <div className="col-md-5 card mx-auto bg-orange border-0" >
+            <div className="row vw-100 pt-5 mt-5">
+                <div className="col-12 card mx-auto bg-orange border-0" >
                     <div className="card-body">
                         <h4 className="card-title mb-4 text-center">Première tâche à effectuer</h4>
                         <form onSubmit={handleSubmit}>
