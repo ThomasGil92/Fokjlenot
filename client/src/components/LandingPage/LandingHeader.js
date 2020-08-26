@@ -9,7 +9,6 @@ const LandingHeader = () => {
             style={{
                 backgroundRepeat: "no-repeat",
                 backgroundImage: `url(img/landingHeader.jpg)`,
-                
             }}>
             <div className="col-12 col-md-6 ">
                 <p className="lead pt-5 mt-5 mb-3" style={{fontSize:"1.1em"}}>L'essentiel pour la gestion de vos projets</p>
