@@ -6,7 +6,7 @@ import LandingFooter from './LandingPage/LandingFooter'
 
 const Landing = () => {
     return (
-        <div className="container-fluid px-0 pt-5">
+        <div className="container-fluid pt-5">
             <LandingMenu />
             <LandingHeader/>
             <LandingPresentation/>
