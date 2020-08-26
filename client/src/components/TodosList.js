@@ -59,8 +59,8 @@ const TodosList = () => {
                             <div className="row pt-4 mt-5 d-flex align-items-center">
                                 <TLMenu />
                             </div>
-                            <div className=" d-flex justify-content-center align-items-center" style={{ height: "85%" }}>
-                                <p className="lead py-2 card px-4 text-dark h-auto">Aucune tâche n'est encore programmée</p>
+                            <div id="no-tasks-yet" className="mt-5 mt-md-0 d-flex justify-content-center align-items-center" >
+                                <p className="lead py-2 card px-4 text-dark text-center h-auto">Aucune tâche n'est encore programmée</p>
 
                             </div>
 

@@ -115,7 +115,7 @@ const SigninForm = (props) => {
                     <Alert />
                     <div className=" d-flex align-items-center">
 
-                        <Link to="/signup" className="text-dark mx-auto mt-2 mt-md-4">Pas encore inscrit?</Link>
+                        <Link to="/signup" className="text-dark mx-auto mt-5 mt-md-4">Pas encore inscrit?</Link>
                     </div>
 
                 </form>

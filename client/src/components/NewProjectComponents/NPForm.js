@@ -6,6 +6,7 @@ import { postProject, setNewProject, clearProjects, setSelectedProjectId, getPro
 import { updateUserProjectsRepo, clearUser, setUserInfos, getUserInfos } from '../../actions/user'
 import Alert from '../Layout/Alert'
 import HomeMenu from '../HomePageComponents/HomeMenu'
+import Footer from '../Layout/Footer'
 
 const NPForm = () => {
     const history = useHistory();
@@ -76,29 +77,33 @@ const NPForm = () => {
     return (
         <div className="container-fluid vh-100 d-flex align-items-center text-dark bg-orange">
             <Alert />
+
+            <Footer anchor={"#homeTop"} />
             <HomeMenu />
-            <div className="col-12 col-md-5 card mx-auto bg-orange mt-5 mt-md-0 border-0" >
-                <div className="card-body">
-                    <h4 className="card-title mb-4 text-center">Nouveau projet</h4>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group mb-4">
-                            <input type="text" name="title" required value={project.title} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
-                        </div>
-                        <div className="form-group mb-4">
-                            <textarea name="description" type="text" rows="5" required value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet" />
-                        </div>
-                        <div className="form-group mb-4">
-                            <input type="date" name="dead_line" required value={project.dead_line} onChange={handleChange} className="form-control" placeholder="Date Limite" />
-                        </div>
-                        <div className="d-md-flex justify-content-between">
-                            <Link className="d-none d-md-block d-md-flex text-dark align-items-center" to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
-                            <input type="submit" value="Démarrer Projet" className="btn btn-primary col-12 col-md-6" />
-                            <Link className="col-12 d-md-none d-flex justify-content-center align-items-center text-dark mt-2 " to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
-                        </div>
-                    </form>
+            <div className="row vw-100 mt-5 pt-5">
+                <div className="col-12 card mx-auto bg-orange mt-5 border-0" >
+                    <div className="card-body">
+                        <h4 className="card-title mb-4 text-center">Nouveau projet</h4>
+                        <form onSubmit={handleSubmit}>
+                            <div className="form-group mb-4">
+                                <input type="text" name="title" required value={project.title} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
+                            </div>
+                            <div className="form-group mb-4">
+                                <textarea name="description" type="text" rows="5" required value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet" />
+                            </div>
+                            <div className="form-group mb-4">
+                                <input type="date" name="dead_line" required value={project.dead_line} onChange={handleChange} className="form-control" placeholder="Date Limite" />
+                            </div>
+                            <div className="d-md-flex justify-content-between">
+                                <Link className="d-none d-md-block d-md-flex text-dark align-items-center" to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
+                                <input type="submit" value="Démarrer Projet" className="btn btn-primary col-12 col-md-6" />
+                                <Link className="col-12 d-md-none d-flex justify-content-center align-items-center text-dark mt-2 " to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

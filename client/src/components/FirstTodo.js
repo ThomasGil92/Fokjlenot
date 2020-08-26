@@ -65,33 +65,36 @@ const FirstTodo = () => {
     }
     return (
         <div className="container-fluid vh-100 d-flex align-items-center text-fokjlenot">
+            <Footer anchor={"#homeTop"} />
             <HomeMenu />
             <Alert />
-            <Footer anchor={"#homeTop"} />
+
             <Cookie />
-            <div className="col-md-5 card mx-auto bg-orange border-0" >
-                <div className="card-body">
-                    <h4 className="card-title mb-4 text-center">Première tâche à effectuer</h4>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group mb-4">
-                            <input type="text" name="title" required value={firstTodo.title} onChange={handleChange} className="form-control" placeholder="Nom de la tâche" />
-                        </div>
-                        <div className="form-group mb-4">
-                            <textarea name="description" type="text" rows="5" value={firstTodo.description} onChange={handleChange} className="form-control" placeholder="Description de la tâche (optionel)" />
-                        </div>
-                        <div className="form-group mb-4">
-                            <label >A finir pour le:</label>
-                            <input type="date" name="dead_line" value={firstTodo.dead_line} onChange={handleChange} className="form-control" placeholder="Date limite (recommandé)" />
-                        </div>{/* 
+            <div className="row vw-100">
+                <div className="col-md-5 card mx-auto bg-orange border-0" >
+                    <div className="card-body">
+                        <h4 className="card-title mb-4 text-center">Première tâche à effectuer</h4>
+                        <form onSubmit={handleSubmit}>
+                            <div className="form-group mb-4">
+                                <input type="text" name="title" required value={firstTodo.title} onChange={handleChange} className="form-control" placeholder="Nom de la tâche" />
+                            </div>
+                            <div className="form-group mb-4">
+                                <textarea name="description" type="text" rows="5" value={firstTodo.description} onChange={handleChange} className="form-control" placeholder="Description de la tâche (optionel)" />
+                            </div>
+                            <div className="form-group mb-4">
+                                <label >A finir pour le:</label>
+                                <input type="date" name="dead_line" value={firstTodo.dead_line} onChange={handleChange} className="form-control" placeholder="Date limite (recommandé)" />
+                            </div>{/* 
                         <div className="form-group mb-4">
                             <label >Début de la tâche:</label>
                             <input type="date" name="task_begin" value={firstTodo.task_begin} onChange={handleChange} className="form-control" placeholder="Début du projet" />
                         </div> */}
-                        <div className="d-flex justify-content-between">
-                            <Link className="d-flex align-items-center" to={"/"}><i className="fas fa-angle-double-left"></i>  Revenir à l'accueil</Link>
-                            <input type="submit" value="Démarrer Projet" className="btn btn-primary " />
-                        </div>
-                    </form>
+                            <div>
+                                <Link className="col-12 btn btn-outline-info text-center mb-2" to={"/"}><i className="fas fa-angle-double-left"></i>  Revenir à l'accueil</Link>
+                                <input type="submit" value="Ajouter cette première tâche" className="btn btn-primary col-12" />
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

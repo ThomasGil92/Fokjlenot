@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from 'react'
 import NPForm from './NewProjectComponents/NPForm'
 import Cookie from './Layout/Cookie'
-import Footer from './Layout/Footer'
 import { useDispatch } from 'react-redux'
 import { getProjects, clearProjects } from '../actions/project'
 import { getUserInfos } from '../actions/user'
@@ -32,7 +31,6 @@ const NewProject = () => {
         <Fragment>
             <Cookie />
             <NPForm />
-            <Footer anchor={"#homeTop"} />
         </Fragment>
     )
 }

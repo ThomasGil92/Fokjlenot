@@ -87,4 +87,7 @@ body {
   .mySpecialFont {
     font-size: 1.3em;
   }
+  #no-tasks-yet{
+    height:85%;
+  }
 }
