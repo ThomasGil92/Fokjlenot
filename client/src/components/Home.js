@@ -13,7 +13,7 @@ const Home = () => {
 
     return (
         <Fragment>
-            <div className="container-fluid bg-orange vh-100 ">
+            <div className="container-fluid bg-white ">
                 <HomeMenu />
                 <Alert />
                 {!user._id ? (

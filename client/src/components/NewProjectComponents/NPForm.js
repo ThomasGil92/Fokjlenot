@@ -75,13 +75,13 @@ const NPForm = () => {
     };
 
     return (
-        <div className="container-fluid vh-100 d-flex align-items-center mb-5 text-dark bg-orange">
+        <div className="container-fluid vh-100 d-flex align-items-center text-dark bg-white">
             <Alert />
 
             <Footer anchor={"#homeTop"} />
             <HomeMenu />
-            <div className="row vw-100 mt-5 pt-5">
-                <div className="col-12 card mx-auto bg-orange mt-5 border-0" >
+            <div id="NPForm" className="row vw-100 ">
+                <div className="col-12 col-md-6 card mx-auto bg-orange border-0" >
                     <div className="card-body">
                         <h4 className="card-title mb-4 text-center">Nouveau projet</h4>
                         <form onSubmit={handleSubmit}>

@@ -4,6 +4,7 @@ import { useHistory, Link } from 'react-router-dom'
 import { postTodo, setTodosByProjectId, clearTodosId, setAlert, clearProjects, updateTodoProjectRepo, clearTodos } from '../actions'
 import HomeMenu from './HomePageComponents/HomeMenu'
 import Cookie from './Layout/Cookie'
+import Footer from './Layout/Footer'
 
 const AddTodo = () => {
     const history = useHistory();
@@ -55,8 +56,9 @@ const AddTodo = () => {
         <div className="container-fluid vh-100 pt-5 d-flex align-items-center text-fokjleno">
             <HomeMenu />
             <Cookie />
-            <div className="row vw-100 mt-5 pt-5">
-                <div className="col-12 card border-0 pt-5" >
+            <Footer href="#homeTop"/>
+            <div className="row vw-100">
+                <div id="AddTodo" className="col-12 col-md-6 mx-auto card border-0 " >
                     <div className="card-body">
                         <h4 className="card-title mb-4 text-center text-fokjlenot">Nouvelle tâche</h4>
                         <form onSubmit={handleSubmit}>

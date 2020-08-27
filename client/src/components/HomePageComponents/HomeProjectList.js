@@ -22,7 +22,7 @@ const HomeProjectList = () => {
     }
 
     return (
-        <div className="row m-0 h-100 justify-content-center bg-white d-flex align-items-center">
+        <div id="projectsList" className="row m-0 justify-content-center bg-white d-flex ">
 
             <div className="col-md-4 text-dark text-center">
 

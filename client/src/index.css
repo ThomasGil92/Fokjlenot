@@ -4,7 +4,7 @@ html {
 body {
   scroll-behavior: smooth;
   margin: 0;
-  
+
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -77,17 +77,48 @@ body {
   width: 100% !important;
 }
 #landing-header {
-  background-size:100% 100%;
+  background-size: 100% 100%;
+}
+#projectsList {
+  padding-top: 150px;
+  padding-bottom: 80px;
+}
+#FirstTodo {
+  padding-top: 200px;
+}
+#NPForm {
+  padding-top: 250px;
+  padding-bottom: 70px;
+}
+#FirstTodo {
+  padding-top: 210px;
+  padding-bottom: 60px;
+}
+#AddTodo {
+  padding-top: 210px;
+  padding-bottom: 50px;
 }
 @media screen and (min-width: 1024px) {
   #landing-header {
-    min-height:650px;
+    min-height: 650px;
     background-size: cover;
+  }
+  #projectsList {
+    padding-top: 100px;
+  }
+  #FirstTodo {
+    padding-top: 80px;
+  }
+  #AddTodo {
+    padding-top: 100px;
+  }
+  #NPForm {
+    padding-top: 70px;
   }
   .mySpecialFont {
     font-size: 1.3em;
   }
-  #no-tasks-yet{
-    height:85%;
+  #no-tasks-yet {
+    height: 85%;
   }
 }
