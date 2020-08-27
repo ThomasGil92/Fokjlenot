@@ -93,7 +93,7 @@ const SigninForm = (props) => {
                         <label className="text-muted">
                             Email
                 </label>
-                        <input value={email} onChange={handleChange('email')} type="email" className="form-control" />
+                        <input value={email} autoFocus onChange={handleChange('email')} type="email" className="form-control" />
                     </div>
                     <div className="form-group">
                         <label className="text-muted">
