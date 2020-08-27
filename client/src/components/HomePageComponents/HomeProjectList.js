@@ -39,7 +39,7 @@ const HomeProjectList = () => {
                         })}
                     </div>
                 ) : (
-                        <p className="pt-5">Aucun projet en cours</p>
+                        <p className="NoProjectPadding">Aucun projet en cours</p>
                     )}
 
 

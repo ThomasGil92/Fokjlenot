@@ -115,6 +115,9 @@ body {
   #NPForm {
     padding-top: 70px;
   }
+  .NoProjectPadding{
+    padding-top:200px;
+  }
   .mySpecialFont {
     font-size: 1.3em;
   }
