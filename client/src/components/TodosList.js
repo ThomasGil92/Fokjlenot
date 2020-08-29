@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import TLList from './TodosList/TLList'
@@ -7,10 +7,12 @@ import Cookie from './Layout/Cookie'
 import RemoveProjectButton from './TodosList/RemoveProjectButton'
 import Alert from './Layout/Alert'
 import Footer from './Layout/Footer'
+import LoadingSpinner from './Layout/LoadingSpinner'
 import { setTodosByProjectId } from '../actions'
 import { setUserInfos, getUserInfos } from '../actions/user'
 import TLMenu from './TodosList/TLMenu'
 const TodosList = () => {
+    const [loading, setLoading] = useState(true)
     const dispatch = useDispatch()
     const todosId = useSelector((state) => state.todosId)
     const user = useSelector((state) => state.user)
@@ -22,22 +24,12 @@ const TodosList = () => {
                 getUserInfos(JSON.parse(sessionStorage.getItem("jwt")).user._id)
                     .then(data => {
                         dispatch(setUserInfos(data))
+                        setLoading(false)
                     })
                     .catch(err => {
                         console.log(err)
                     })
             }
-            if (localStorage.getItem("jwt")) {
-                getUserInfos(JSON.parse(localStorage.getItem("jwt")).user._id)
-                    .then(data => {
-                        dispatch(setUserInfos(data))
-
-                    })
-                    .catch(err => {
-                        console.log(err)
-                    })
-            }
-
         }
     }
 
@@ -47,6 +39,7 @@ const TodosList = () => {
 
     return (
         <div className="container-fluid bg-white text-white">
+            {loading && <LoadingSpinner />}
             <HomeMenu />
             <Cookie />
             <Alert />

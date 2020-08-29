@@ -5,10 +5,12 @@ import { postTodo, setTodosByProjectId, clearTodosId, setAlert, clearProjects, u
 import HomeMenu from './HomePageComponents/HomeMenu'
 import Cookie from './Layout/Cookie'
 import Footer from './Layout/Footer'
+import LoadingSpinner from './Layout/LoadingSpinner'
 
 const AddTodo = () => {
     const history = useHistory();
     const dispatch = useDispatch();
+    const [loading, setLoading] = useState(false)
     const [todo, setFields] = useState({
         title: '',
         description: '',
@@ -34,6 +36,7 @@ const AddTodo = () => {
         e.preventDefault();
         /* const userId = JSON.parse(sessionStorage.getItem('jwt')).user._id
         const token = JSON.parse(sessionStorage.getItem('jwt')).token */
+        setLoading(true)
         postTodo(JSON.parse(sessionStorage.getItem('jwt')).user._id, JSON.parse(sessionStorage.getItem('jwt')).token, todo)
             .then(data => {
                 console.log(data)
@@ -45,8 +48,10 @@ const AddTodo = () => {
 
                     })
                     .then(() => {
-                        dispatch(setAlert("La tâche a été ajoutée avec succés", "success"))
                         history.push("/todos-list")
+                        setLoading(false)
+                        dispatch(setAlert("La tâche a été ajoutée avec succés", "success"))
+
                     })
 
             })
@@ -54,9 +59,10 @@ const AddTodo = () => {
     }
     return (
         <div className="container-fluid vh-100 pt-5 d-flex align-items-center text-fokjleno">
+            {loading && <LoadingSpinner />}
             <HomeMenu />
             <Cookie />
-            <Footer href="#homeTop"/>
+            <Footer href="#homeTop" />
             <div className="row vw-100">
                 <div id="AddTodo" className="col-12 col-md-6 mx-auto card border-0 " >
                     <div className="card-body">

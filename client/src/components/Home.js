@@ -17,8 +17,10 @@ const Home = () => {
                 <HomeMenu />
                 <Cookie />
                 <Alert />
+
                 {!user._id ? (
                     <div className="row h-100 justify-content-center bg-orange d-flex align-items-center">
+
                         <p className="text-dark">Chargement ...</p>
                         <Footer anchor={"#homeTop"} />
                     </div>

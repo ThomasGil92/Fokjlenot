@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Accordion, Card, Button, Modal } from 'react-bootstrap';
 import { setTimeLeft } from './TLFunctions'
 import TodoColorFieldset from '../Layout/TodoColorFieldset'
+import LoadingSpinner from '../Layout/LoadingSpinner'
 import AddSubtask from './addSubtask'
 import {
     setTodoItem,
@@ -24,6 +25,7 @@ import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 const TLCols = () => {
     moment.locale('fr');
     const [showSupress, setShowSupress] = useState(false);
+    const [loading, setLoading] = useState(true);
     const dispatch = useDispatch()
     const todosId = useSelector((state) => state.todosId)
     const todos = useSelector((state) => state.todos)
@@ -35,16 +37,9 @@ const TLCols = () => {
         if (todosId.length) {
             todosId.forEach(todoItem => {
                 dispatch(setTodoItem(todoItem))
-            }
-            )
-        }
-        /* if (todos.length) {
-            todos.forEach(todo => {
-
-                setTimeLeft(todo.dead_line, now)
             })
-        } */
-
+        }
+        setLoading(false)
     }
     useEffect(() => {
         init();
@@ -104,20 +99,6 @@ const TLCols = () => {
 
             })
         }
-        if (localStorage.getItem('jwt')) {
-            supressTodoById(todoToSupressId, JSON.parse(localStorage.getItem('jwt')).token, JSON.parse(localStorage.getItem('jwt')).user._id).then((response) => {
-                deleteTodoFromRepo(JSON.parse(localStorage.getItem('selectedProjectId')), response).then(() => {
-                    dispatch(clearTodos())
-                    dispatch(clearTodosId())
-                    dispatch(setTodosByProjectId(JSON.parse(localStorage.getItem('selectedProjectId'))))
-                    dispatch(setAlert("Tâche supprimée", "danger"))
-
-                })
-
-            })
-        }
-
-
     }
 
     const handleOnClick = e => {
@@ -132,7 +113,8 @@ const TLCols = () => {
     }
 
     return (
-        <Fragment>
+        <Fragment>{/* 
+            {loading && <LoadingSpinner />} */}
             <div className="d-md-none row w-100 text-center mx-auto mt-5 todoTitleFont" style={{ paddingBottom: "50px" }}>
                 <div className="col-12 text-dark border-right p-2">
                     <h3>A Faire</h3>

@@ -5,9 +5,11 @@ import { getProjects } from '../../actions/project';
 import { getUser, setUser, authenticate, getUserInfos, setUserInfos } from '../../actions/user';
 import { useHistory, Redirect, Link } from "react-router-dom";
 import Alert from '../Layout/Alert.js'
+import LoadingSpinner from '../Layout/LoadingSpinner.js'
 
 
 const SigninForm = (props) => {
+    const [loading, setLoading] = useState(false)
     const [remember, setRemember] = useState(false)
     const [values, setValues] = useState({
         email: '',
@@ -33,15 +35,17 @@ const SigninForm = (props) => {
 
     const clickSubmit = event => {
         event.preventDefault();
+        setLoading(true)
         getUser({ email, password })
             .then(data => {
                 if (data.err) {
+                    setLoading(false)
                     dispatch(setAlert("L'identifiant ou le mot de passe n'est pas reconnu", "danger"))
                 }
                 else {
                     console.log(data)
-                    if (data.user.confirmed===false) {
-                        dispatch(setAlert(`Votre email n'a pas été confirmé, rendez vous sur la boite de ${data.user.email}`,"danger"))
+                    if (data.user.confirmed === false) {
+                        dispatch(setAlert(`Votre email n'a pas été confirmé, rendez vous sur la boite de ${data.user.email}`, "danger"))
                     } else {
                         authenticate(data, remember)
                         getUserInfos(JSON.parse(sessionStorage.getItem('jwt')).user._id).then(user => {
@@ -53,6 +57,7 @@ const SigninForm = (props) => {
                                     dispatch(getProjects(projectItem))
                                 })
                             }
+                            setLoading(false)
                             history.push("/")
                             dispatch(setAlert("Vous êtes connecté", "success"))
 
@@ -87,13 +92,14 @@ const SigninForm = (props) => {
     } else {
         return (
             <div className="row mt-5 mt-md-0 h-100 justify-content-center text-center bg-orange d-flex align-items-center">
+                {loading && <LoadingSpinner />}
                 <form className='col-12 col-md-4'>
                     <h2>Connexion</h2>
                     <div className="form-group">
                         <label className="text-muted">
                             Email
                 </label>
-                        <input value={email}  onChange={handleChange('email')} type="email" className="form-control" />
+                        <input value={email} onChange={handleChange('email')} type="email" className="form-control" />
                     </div>
                     <div className="form-group">
                         <label className="text-muted">
