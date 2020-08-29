@@ -15,6 +15,7 @@ const Home = () => {
         <Fragment>
             <div className="container-fluid bg-white ">
                 <HomeMenu />
+                <Cookie />
                 <Alert />
                 {!user._id ? (
                     <div className="row h-100 justify-content-center bg-orange d-flex align-items-center">
@@ -24,7 +25,7 @@ const Home = () => {
                 ) : (<HomeProjectList />)}
 
 
-                <Cookie />
+
             </div>
 
         </Fragment>

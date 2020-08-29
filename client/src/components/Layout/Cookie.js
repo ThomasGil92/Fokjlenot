@@ -14,7 +14,7 @@ const Cookie = () => {
     }, [dispatch]);
     return (
         <Fragment>
-            {accept ? (
+            {!accept ? (
                 <div className="position-absolute col-12 p-0 home-cookie-fix bg-dark">
                     <CookieBanner
                         styles={{

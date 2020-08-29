@@ -2,10 +2,10 @@ const User = require("../../models/user")
 const sendEmail = require('./email.send')
 const msgs = require('./email.msgs')
 const templates = require('./email.templates')
+const { uuid } = require('uuidv4')
 
 exports.collectEmail = (req, res) => {
     const { email } = req.body
-
     User.findOne({ email })
         .then(user => {
 
@@ -25,15 +25,44 @@ exports.collectEmail = (req, res) => {
         })
         .catch(err => console.log(err))
 }
+exports.collectEmailForPassword = (req, res) => {
+    const { email } = req.body
+    User.findOne({ email })
+        .then(user => {
+            const id = uuid()
+            // We have a new user! Send them a confirmation email.
+            if (user) {
+                sendEmail(user.email, templates.resetPassword(id))
+                User.findOneAndUpdate(
+                    { _id: user._id },
+                    { $set: { forgotPassId: id,expireForgotPassId:Date.now() + (3600000*3) } }
+                ).then(res=>console.log(res))
 
+                return res.json({ msg: "message envoyé" })
+
+
+            }
+
+        })
+        .catch(err => console.log(err))
+}
+exports.getUserByForgotId=(req,res)=>{
+    const {forgotId}=req.body
+    console.log(forgotId)
+    User.findOne({"forgotPassId":forgotId})
+    .then(user=>{
+        console.log(user)
+        return res.json(user)
+    })
+    .catch(err => console.log(err,forgotId))
+}
 // The callback that is invoked when the user visits the confirmation
 // url on the client and a fetch request is sent in componentDidMount.
 exports.confirmEmail = (req, res) => {
     const { id } = req.params
-
     User.findById(id)
         .then(user => {
-
+console.log(id)
             // A user with that id does not exist in the DB. Perhaps some tricky 
             // user tried to go to a different url than the one provided in the 
             // confirmation email.

@@ -15,6 +15,12 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    forgotPassId: {
+        type: String
+    },
+    expireForgotPassId: {
+        type: Date
+    },
     confirmed: {
         type: Boolean,
         default: false
@@ -43,7 +49,8 @@ const userSchema = new mongoose.Schema({
 userSchema.virtual('password')
     .set(function (password) {
         this._password = password;
-        this.salt = uuid();
+        this.salt = uuid();/* 
+        this.forgotPassId=uuid() */
         this.hashed_password = this.encryptPassword(password);
     })
     .get(function () {

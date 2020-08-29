@@ -7,6 +7,7 @@ const {
     requireSignin,
     isAuth,
     read,
+    updatePassword
     
 } = require('../controllers/auth');
 const { update } = require('../controllers/user')
@@ -19,6 +20,7 @@ router.post("/signin", signin);
 router.get("/user/:userId",read)
 router.post("/signup", signupValidator, signup);
 router.put("/user-update-project/:userId",requireSignin, isAuth, update)
+router.put("/password-update/:userId",signupValidator, updatePassword)
 router.get("/signout/:userId", requireSignin, isAuth, signout);
 
 

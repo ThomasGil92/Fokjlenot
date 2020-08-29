@@ -18,6 +18,19 @@ module.exports = {
       
     `,      
     text: `Copy and paste this link: ${CLIENT_ORIGIN}/confirm/${id}`
+  }),
+
+  resetPassword: id => ({
+    subject: 'Renouvellement de mot de passe',
+    html: `
+      <h2>Fokjlenot</h2><br>
+      <span>Application de gestion de projet</span>
+      <br><br>
+        <p><a href='${CLIENT_ORIGIN}/reset-password/${id}'>Cliquez ici</a> pour modifier votre mot de passe.</p>
+        <p>A très bientôt.</p>
+      
+    `,      
+    text: `Copy and paste this link: ${CLIENT_ORIGIN}/reset-password/${id}`
   })
   
 }

@@ -11,7 +11,23 @@ export function clearUser() {
       dispatch({ type: CLEAR_AUTH_USER, authUser: '' })
     };
   };
-
+export const passwordReset=(userId,user)=>{
+  return fetch(`${API}/password-update/${userId}`, {
+    method: 'PUT',
+    headers: {
+      Accept: 'application/json',
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(user)
+  })
+    .then(response => {
+      console.log(response)
+      return response.json()
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
   export const postUser = (user) => {
     return fetch(`${API}/signup`, {
       method: 'POST',

@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const expressJwt = require('express-jwt');
 const { errorHandler } = require('../helpers/dbError.js');
 require('dotenv').config();
+const crypto = require('crypto');
 
 exports.signup = (req, res) => {
     console.log('req.body', req.body)
@@ -75,3 +76,27 @@ exports.isAdmin = (req, res, next) => {
 exports.signout = (req, res) => {
     res.json({ message: 'Signout success' });
 };
+exports.updatePassword=(req,res)=>{
+    console.log(req.body)
+    const{name,email,password,forgotPassId,expireForgotPassId,}=req.body
+    User.findOne(
+        { _id: req.user._id },(err,user)=>{
+            user.name=name,
+            user.email=email,
+            user.forgotPassId=forgotPassId
+            user.expireForgotPassId=expireForgotPassId
+            user.password=password
+            user.save((err, updatedUser) => {
+                if (err) {
+                    console.log('USER UPDATE ERROR', err);
+                    return res.status(400).json({
+                        error: 'User update failed'
+                    });
+                }
+                updatedUser.hashed_password = undefined;
+                updatedUser.salt = undefined;
+                res.json(updatedUser);
+            });
+        }
+    )
+}

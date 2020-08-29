@@ -93,7 +93,7 @@ const SigninForm = (props) => {
                         <label className="text-muted">
                             Email
                 </label>
-                        <input value={email} autoFocus onChange={handleChange('email')} type="email" className="form-control" />
+                        <input value={email}  onChange={handleChange('email')} type="email" className="form-control" />
                     </div>
                     <div className="form-group">
                         <label className="text-muted">
@@ -113,9 +113,9 @@ const SigninForm = (props) => {
                         </div>
                     </div>
                     <Alert />
-                    <div className=" d-flex align-items-center">
-
-                        <Link to="/signup" className="text-dark mx-auto mt-5 mt-md-4">Pas encore inscrit?</Link>
+                    <div className=" d-flex align-items-center mt-5 mt-md-4">
+                        <Link to="/signup" className="text-dark mx-auto ">Pas encore inscrit?</Link>
+                        <Link to="/forgot-password" className="text-dark mx-auto">Mot de passe oublié?</Link>
                     </div>
 
                 </form>

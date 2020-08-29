@@ -227,7 +227,7 @@ const TLCols = () => {
                         )
                     })}
                 </div>
-                 <div className="col-4 border-right text-dark p-2">
+                <div className="col-4 border-right text-dark p-2">
                     <h3 >En production</h3>
                     {todos.map((t, i) => {
                         return (
