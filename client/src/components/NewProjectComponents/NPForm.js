@@ -28,7 +28,7 @@ const focus=e=>{
            var elm=document.getElementById(e.target.id)
     console.log(elm)
     elm.style.color="red"
-    elm.style.marginTop="20px" 
+    document.getElementById("NPForm").style.marginTop="50px" 
         }
         
     
