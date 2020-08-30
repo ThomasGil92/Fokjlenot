@@ -29,9 +29,10 @@ const NPForm = () => {
             var elm = document.getElementById(e.target.id)
             if (window.navigator.platform === "Android") {
                 elm.style.color = "red"
+                document.getElementById("homeTop").style.visibility = "hidden"
             }
             
-            document.getElementById("homeTop").style.visibility = "hidden"
+            
         }
         /* document.getElementsByTagName("input").scrollIntoView({block:"center"}); */
         /* document.getElementsByName("title").style.backgroundColor="red" */
