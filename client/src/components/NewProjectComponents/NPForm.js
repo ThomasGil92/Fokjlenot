@@ -25,7 +25,7 @@ const NPForm = () => {
     }
 const focus=()=>{
     if(window.innerWidth <= 700){
-        document.scrollIntoView({block:"end"});
+        document.getElementsByTagName("input").scrollIntoView({block:"center"});
     }
 }
     const handleSubmit = e => {
