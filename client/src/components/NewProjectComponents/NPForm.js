@@ -28,7 +28,7 @@ const focus=e=>{
            var elm=document.getElementById(e.target.id)
     console.log(elm)
     elm.style.color="red"
-    document.getElementById("homeTop").style.display="none" 
+    window.getElementById("homeTop").style.display="block" 
         }
         
     
