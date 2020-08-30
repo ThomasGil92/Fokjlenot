@@ -27,7 +27,7 @@ const NPForm = () => {
     const focus = e => {
         if (window.innerWidth <= 700) {
             var elm = document.getElementById(e.target.id)
-            if (window.navigator.platform === "Iphone") {
+            if (window.navigator.platform === "iPhone") {
                 elm.style.color = "red"
                 document.getElementById("homeTop").style.visibility = "hidden"
             }
