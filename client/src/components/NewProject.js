@@ -8,11 +8,11 @@ import { getUserInfos } from '../actions/user'
 const NewProject = () => {
     const dispatch = useDispatch()
     document.title = "Ajouter un projet"
-    const init = () => {
+    /* const init = () => {
         if (sessionStorage.getItem('jwt')) {
             getUserInfos(JSON.parse(sessionStorage.getItem("jwt")).user._id)
                 .then(data => {
-                    /* dispatch(setUserInfos(data)) */
+                    // dispatch(setUserInfos(data))
                     dispatch(clearProjects())
                     if (data.projectsId) {
                         data.projectsId.forEach(projectItem => {
@@ -26,7 +26,7 @@ const NewProject = () => {
 
     useEffect(() => {
         init()
-    }, [dispatch])
+    }, [dispatch]) */
     return (
         <Fragment>
             <Cookie />
