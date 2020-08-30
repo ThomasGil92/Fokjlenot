@@ -24,11 +24,11 @@ const NPForm = () => {
         setFields({ ...project, [e.target.name]: value });
     }
 const focus=e=>{
-    if(window.innerWidth <= 700){
+    if(window.innerWidth >= 700){
            var elm=document.getElementById(e.target.id)
     console.log(elm)
     elm.style.color="red"
-    document.getElementById("homeTop").style.backgroundColor="red!important" 
+    document.getElementById("homeTop").style.backgroundColor="red" 
         }
         
     
