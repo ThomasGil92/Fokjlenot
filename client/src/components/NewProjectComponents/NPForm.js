@@ -27,7 +27,7 @@ const NPForm = () => {
     const focus = e => {
         if (window.innerWidth <= 700) {
             var elm = document.getElementById(e.target.id)
-            if (window.navigator.platform === "Linux"||"null") {
+            if (window.navigator.platform === "Linux"||"null"||"Android") {
                 document.getElementById("homeTop").style.visibility = "hidden"
             }
             if (window.navigator.platform === "iPhone") {
@@ -111,10 +111,10 @@ const NPForm = () => {
                                 <input type="text" id="title" name="title" required value={project.title} onBlur={focusOff} onFocus={focus} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
                             </div>
                             <div className="form-group mb-4">
-                                <textarea name="description" type="text" rows="5" required value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet" />
+                                <textarea id="description" name="description" type="text" rows="5" required onBlur={focusOff} onFocus={focus} value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet" />
                             </div>
                             <div className="form-group mb-4">
-                                <input type="date" name="dead_line" required value={project.dead_line} onChange={handleChange} className="form-control" placeholder="Date Limite" />
+                                <input type="date" id="dead-line" name="dead_line" required value={project.dead_line} onBlur={focusOff} onFocus={focus} onChange={handleChange} className="form-control" placeholder="Date Limite" />
                             </div>
                             <div className="d-md-flex justify-content-between">
                                 <Link className="d-none d-md-block d-md-flex text-dark align-items-center" to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
