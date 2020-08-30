@@ -27,11 +27,11 @@ const NPForm = () => {
     const focus = e => {
         if (window.innerWidth <= 700) {
             var elm = document.getElementById(e.target.id)
-            if (window.navigator.platform === "Linux"||"null") {
+            /* if (window.navigator.platform === "Linux"||"null") {
                 document.getElementById("homeTop").style.visibility = "hidden"
-            }
+            } */
             if (window.navigator.platform === "iPhone") {
-                document.getElementById("homeTop").style.visibility = "visible"
+                document.getElementById("homeTop").style.visibility = "hidden"
             }
             
             
@@ -41,7 +41,6 @@ const NPForm = () => {
     }
     const focusOff = e => {
         if (window.innerWidth <= 700) {
-
             document.getElementById("homeTop").style.visibility = "visible"
         }
         /* document.getElementsByTagName("input").scrollIntoView({block:"center"}); */
