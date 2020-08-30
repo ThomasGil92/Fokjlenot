@@ -23,7 +23,11 @@ const NPForm = () => {
         const value = e.target.value;
         setFields({ ...project, [e.target.name]: value });
     }
-
+const focus=()=>{
+    if(window.innerWidth <= 700){
+        document.scrollIntoView();
+    }
+}
     const handleSubmit = e => {
         e.preventDefault();
         if (sessionStorage.getItem('jwt')) {
@@ -53,7 +57,7 @@ const NPForm = () => {
                     }
                 })
         }
-        if (localStorage.getItem('jwt')) {
+        /* if (localStorage.getItem('jwt')) {
             postProject(JSON.parse(localStorage.getItem('jwt')).user._id, JSON.parse(localStorage.getItem('jwt')).token, project)
                 .then(data => {
                     const projet = data
@@ -70,7 +74,7 @@ const NPForm = () => {
                         console.log(data.err)
                     }
                 })
-        }
+        } */
 
     };
 
@@ -86,7 +90,7 @@ const NPForm = () => {
                         <h4 className="card-title mb-4 text-center">Nouveau projet</h4>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group mb-4">
-                                <input type="text" name="title" required value={project.title} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
+                                <input type="text" name="title" required value={project.title} onFocus={focus} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
                             </div>
                             <div className="form-group mb-4">
                                 <textarea name="description" type="text" rows="5" required value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet" />
