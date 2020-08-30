@@ -21,27 +21,29 @@ const NPForm = () => {
 
     const handleChange = e => {
         const value = e.target.value;
-        console.log(window.navigator.platform)
         setFields({ ...project, [e.target.name]: value });
     }
-const focus=e=>{
-    if(window.innerWidth <= 700){
-           var elm=document.getElementById(e.target.id)
-    console.log(elm)
-    elm.style.color="red"
-    document.getElementById("homeTop").style.visibility="hidden"
+
+    const focus = e => {
+        if (window.innerWidth <= 700) {
+            var elm = document.getElementById(e.target.id)
+            if (window.navigator.platform === "android") {
+                elm.style.color = "red"
+            }
+            
+            document.getElementById("homeTop").style.visibility = "hidden"
         }
         /* document.getElementsByTagName("input").scrollIntoView({block:"center"}); */
         /* document.getElementsByName("title").style.backgroundColor="red" */
-}
-const focusOff=e=>{
-    if(window.innerWidth <= 700){
-           
-    document.getElementById("homeTop").style.visibility="visible"
+    }
+    const focusOff = e => {
+        if (window.innerWidth <= 700) {
+
+            document.getElementById("homeTop").style.visibility = "visible"
         }
         /* document.getElementsByTagName("input").scrollIntoView({block:"center"}); */
         /* document.getElementsByName("title").style.backgroundColor="red" */
-}
+    }
     const handleSubmit = e => {
         e.preventDefault();
         if (sessionStorage.getItem('jwt')) {
@@ -71,7 +73,7 @@ const focusOff=e=>{
                     }
                 })
         }
-        /* if (localStorage.getItem('jwt')) {
+        if (localStorage.getItem('jwt')) {
             postProject(JSON.parse(localStorage.getItem('jwt')).user._id, JSON.parse(localStorage.getItem('jwt')).token, project)
                 .then(data => {
                     const projet = data
@@ -88,7 +90,7 @@ const focusOff=e=>{
                         console.log(data.err)
                     }
                 })
-        } */
+        }
 
     };
 
