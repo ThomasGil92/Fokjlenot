@@ -28,8 +28,10 @@ const NPForm = () => {
         if (window.innerWidth <= 700) {
             var elm = document.getElementById(e.target.id)
             if (window.navigator.platform === "Linux"||"null") {
-                elm.style.color = "red"
                 document.getElementById("homeTop").style.visibility = "hidden"
+            }
+            if (window.navigator.platform === "iPhone") {
+                document.getElementById("homeTop").style.visibility = "visible"
             }
             
             
