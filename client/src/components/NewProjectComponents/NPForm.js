@@ -27,7 +27,7 @@ const NPForm = () => {
     const focus = e => {
         if (window.innerWidth <= 700) {
             var elm = document.getElementById(e.target.id)
-            if (window.navigator.platform === "android") {
+            if (window.navigator.platform === "Android") {
                 elm.style.color = "red"
             }
             
