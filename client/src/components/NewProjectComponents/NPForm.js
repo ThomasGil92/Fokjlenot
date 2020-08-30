@@ -24,17 +24,22 @@ const NPForm = () => {
         setFields({ ...project, [e.target.name]: value });
     }
 const focus=e=>{
-    if(window.innerWidth >= 700){
+    if(window.innerWidth <= 700){
            var elm=document.getElementById(e.target.id)
     console.log(elm)
     elm.style.color="red"
-    document.getElementById("homeTop").style.backgroundColor="red" 
+    document.getElementById("homeTop").style.visibility="hidden"
         }
-        
-    
         /* document.getElementsByTagName("input").scrollIntoView({block:"center"}); */
         /* document.getElementsByName("title").style.backgroundColor="red" */
-    
+}
+const focusOff=e=>{
+    if(window.innerWidth <= 700){
+           
+    document.getElementById("homeTop").style.visibility="visible"
+        }
+        /* document.getElementsByTagName("input").scrollIntoView({block:"center"}); */
+        /* document.getElementsByName("title").style.backgroundColor="red" */
 }
     const handleSubmit = e => {
         e.preventDefault();
@@ -98,7 +103,7 @@ const focus=e=>{
                         <h4 className="card-title mb-4 text-center">Nouveau projet</h4>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group mb-4">
-                                <input type="text" id="title" name="title" required value={project.title} onFocus={focus} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
+                                <input type="text" id="title" name="title" required value={project.title} onBlur={focusOff} onFocus={focus} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
                             </div>
                             <div className="form-group mb-4">
                                 <textarea name="description" type="text" rows="5" required value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet" />
