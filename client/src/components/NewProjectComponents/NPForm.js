@@ -21,6 +21,7 @@ const NPForm = () => {
 
     const handleChange = e => {
         const value = e.target.value;
+        console.log(window.navigator.platform)
         setFields({ ...project, [e.target.name]: value });
     }
 const focus=e=>{
