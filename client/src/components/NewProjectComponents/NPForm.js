@@ -25,7 +25,7 @@ const NPForm = () => {
     }
 const focus=()=>{
     if(window.innerWidth <= 700){
-        document.scrollIntoView(alignToTop);
+        document.scrollIntoView(true);
     }
 }
     const handleSubmit = e => {
