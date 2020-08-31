@@ -101,6 +101,7 @@ const NPForm = () => {
                         <h4 className="card-title mb-4 text-center">Nouveau projet</h4>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group mb-4">
+                                {window.navigator.platform}
                                 <input type="text" id="title" name="title" required value={project.title} /* onBlur={ focusOff()}( */ onFocus={(e)=>focus(e)} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
                             </div>
                             <div className="form-group mb-4">
