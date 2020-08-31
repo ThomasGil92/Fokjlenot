@@ -89,7 +89,6 @@ const NPForm = () => {
         } */
 
     };
-const focus=focus()
     return (
         <div className="container-fluid vh-100 d-flex align-items-center text-dark bg-white">
             <Alert />
