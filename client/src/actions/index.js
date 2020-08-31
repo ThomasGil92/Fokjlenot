@@ -218,12 +218,12 @@ export const postSubtask = (subTask) => {
 export const focus = () => {
   if (window.innerWidth <= 700) {
     if (document.getElementById("homeTop")) {
-      if (window.navigator.platform ==="Linux" || "null" || "Android" ) {
+      if (window.navigator.platform ==="Linux" || window.navigator.platform ==="null" || window.navigator.platform ==="Android" ) {
         document.getElementById("homeTop").style.visibility = "hidden"
       }
-      else if (window.navigator.platform === "iPhone") {
+      /* if (window.navigator.platform === "iPhone") {
         document.getElementById("homeTop").style.visibility = "visible"
-      }
+      } */
     }
   }
 }
