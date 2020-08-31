@@ -94,7 +94,7 @@ const TodoColorFieldset = props => {
                         </ButtonGroup>
                     </div>
                     {radioValue && radioValue !== "" ? (
-                        <div className="col-12 col-md-6 mx-auto text-center">
+                        <div className="col-12 col-md-6 mt-2 mt-md-0 mx-auto text-center">
                             <p>Couleur choisie:</p>
                             <div className="w-100 py-3 rounded" style={{ backgroundColor: `${radioValue}` }}>
                             </div>
