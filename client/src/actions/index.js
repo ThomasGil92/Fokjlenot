@@ -131,7 +131,7 @@ export function setTodoItem(todoItemId) {
     return get(`${API}/todo/${todoItemId}`)
       .then(todo => {
         dispatch({ type: SET_TODO, todos: todo.data })
-        
+
       })
   }
 }
@@ -215,20 +215,20 @@ export const postSubtask = (subTask) => {
     })
 
 }
-export const focus = e => {
+export function focus(e) {
   if (window.innerWidth <= 700) {
-      var elm = document.getElementById(e.target.id)
-      if (window.navigator.platform === "iPhone") {
-          document.getElementById("homeTop").style.visibility = "hidden"
-      }
-      if (window.navigator.platform === "Linux"||"null"||"Android") {
-          document.getElementById("homeTop").style.visibility = "visible"
-      }   
+    var elm = document.getElementById(e.target.id)
+    if (window.navigator.platform === "iPhone") {
+      document.getElementById("homeTop").style.visibility = "hidden"
+    }
+    if (window.navigator.platform === "Linux" || "null" || "Android") {
+      document.getElementById("homeTop").style.visibility = "visible"
+    }
   }
 }
-export const focusOff = e => {
+export function focusOff(e) {
   if (window.innerWidth <= 700) {
-      document.getElementById("homeTop").style.visibility = "visible"
+    document.getElementById("homeTop").style.visibility = "visible"
   }
 }
 
