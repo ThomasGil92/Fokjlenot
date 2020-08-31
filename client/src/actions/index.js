@@ -216,18 +216,22 @@ export const postSubtask = (subTask) => {
 
 }
 export const focus = () => {
-  if (document.getElementById("homeTop")) {
-    if (window.navigator.platform === "Linux" || "null" || "Android") {
-      document.getElementById("homeTop").style.visibility = "hidden"
-    }
-    else if (window.navigator.platform === "iPhone" || "iPhone Simulator") {
-      document.getElementById("homeTop").style.visibility = "visible"
+  if (window.innerWidth <= 700) {
+    if (document.getElementById("homeTop")) {
+      if (window.navigator.platform ==="Linux" || "null" || "Android" ) {
+        document.getElementById("homeTop").style.visibility = "hidden"
+      }
+      else if (window.navigator.platform === "iPhone" || "iPhone Simulator") {
+        document.getElementById("homeTop").style.visibility = "visible"
+      }
     }
   }
 }
 export const focusOff = () => {
-  if (document.getElementById("homeTop")) {
-    document.getElementById("homeTop").style.visibility = "visible"
+  if (window.innerWidth <= 700) {
+    if (document.getElementById("homeTop")) {
+      document.getElementById("homeTop").style.visibility = "visible"
+    }
   }
 }
 
