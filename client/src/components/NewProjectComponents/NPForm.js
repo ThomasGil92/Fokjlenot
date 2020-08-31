@@ -17,11 +17,11 @@ const NPForm = () => {
         description: '',
         dead_line: ''
     })
-    
+
     const handleChange = e => {
         const value = e.target.value;
         setFields({ ...project, [e.target.name]: value });
-        
+
     }
 
     /* const focus = e => {
@@ -102,7 +102,7 @@ const NPForm = () => {
                         <form onSubmit={handleSubmit}>
                             <div className="form-group mb-4">
                                 {window.navigator.platform}
-                                <input type="text" id="title" name="title" required value={project.title} /* onBlur={ focusOff()}( */ onFocus={(e)=>focus(e)} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
+                                <input type="text" id="title" name="title" required value={project.title} onBlur={() => focusOff()} onFocus={() => focus()} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
                             </div>
                             <div className="form-group mb-4">
                                 <textarea id="description" name="description" type="text" rows="5" required /* onBlur={(e) => focusOff(e)} onFocus={(e) => focus(e)} */ value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet" />
