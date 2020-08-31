@@ -219,8 +219,8 @@ export const focus = (e) => {
   if (window.innerWidth <= 700) {
     
     if (document.getElementById("homeTop")) {
-      /* 
-        e.preventDefault() */
+      
+        e.preventDefault()
         document.getElementById("homeTop").style.visibility = "hidden"
       
       if (window.navigator.platform === "Linux" || "null" || "Android") {
