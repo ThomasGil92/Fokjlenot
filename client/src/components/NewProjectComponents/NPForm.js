@@ -17,13 +17,14 @@ const NPForm = () => {
         description: '',
         dead_line: ''
     })
-
+    
     const handleChange = e => {
         const value = e.target.value;
         setFields({ ...project, [e.target.name]: value });
+        
     }
 
-    const focus = e => {
+    /* const focus = e => {
         if (window.innerWidth <= 700) {
             var elm = document.getElementById(e.target.id)
             if (window.navigator.platform === "Linux" || "null" || "Android") {
@@ -38,7 +39,7 @@ const NPForm = () => {
         if (window.innerWidth <= 700) {
             document.getElementById("homeTop").style.visibility = "visible"
         }
-    }
+    } */
     const handleSubmit = e => {
         e.preventDefault();
         if (sessionStorage.getItem('jwt')) {
