@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
-import { setAlert } from '../../actions'
+import { setAlert,focus,focusOff } from '../../actions'
 import { postProject, setNewProject, clearProjects, setSelectedProjectId, getProjects } from '../../actions/project'
 import { updateUserProjectsRepo, clearUser, setUserInfos, getUserInfos } from '../../actions/user'
 import Alert from '../Layout/Alert'
@@ -69,7 +69,7 @@ const NPForm = () => {
                     }
                 })
         }
-        if (localStorage.getItem('jwt')) {
+        /* if (localStorage.getItem('jwt')) {
             postProject(JSON.parse(localStorage.getItem('jwt')).user._id, JSON.parse(localStorage.getItem('jwt')).token, project)
                 .then(data => {
                     const projet = data
@@ -86,7 +86,7 @@ const NPForm = () => {
                         console.log(data.err)
                     }
                 })
-        }
+        } */
 
     };
 
