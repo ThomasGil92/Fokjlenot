@@ -17,7 +17,8 @@ const NPForm = () => {
         description: '',
         dead_line: ''
     })
-
+const focus=focus()
+const focusOff=focusOff()
 
     const handleChange = e => {
         const value = e.target.value;
