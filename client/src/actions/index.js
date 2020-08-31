@@ -217,11 +217,9 @@ export const postSubtask = (subTask) => {
 }
 export const focus = (e) => {
   if (window.innerWidth <= 700) {
-    if (window.navigator.platform === "iPhone"||"iPhone Simulator") {
-      if (document.getElementById("homeTop")) {
 
-        /* 
-          e.preventDefault() */
+    if (document.getElementById("homeTop")) {
+      if (window.navigator.platform === "iPhone" || "iPhone Simulator") {
         document.getElementById("homeTop").style.visibility = "hidden"
       }
       /* if (window.navigator.platform === "Linux" || "null" || "Android") {
