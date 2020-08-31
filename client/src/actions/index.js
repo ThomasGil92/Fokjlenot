@@ -217,14 +217,16 @@ export const postSubtask = (subTask) => {
 }
 export const focus = () => {
   var OSName = "Unknown OS"
-  if (navigator.platform.indexOf("Linux") != -1){ OSName = "Linux"};
-  if (OSName==="Linux"){
-    if (document.getElementById("homeTop")) {
+  if (navigator.platform.indexOf("Linux") != -1) { OSName = "Linux" };
+  if (navigator.platform.indexOf("iPhone") != -1) { OSName = "ios" };
+  if (document.getElementById("homeTop")) {
+    if (OSName === "Linux") {
       document.getElementById("homeTop").style.visibility = "hidden"
     }
-  }else{
-    console.log("meeerde")
-  }
+    if (OSName === "ios") {
+      document.getElementById("homeTop").style.backgroundColor = "red"
+    }
+  } 
 
   /*if (window.innerWidth <= 700) {
     if (document.getElementById("homeTop")) {
