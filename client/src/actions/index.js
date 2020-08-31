@@ -215,7 +215,7 @@ export const postSubtask = (subTask) => {
     })
 
 }
-export function focus() {
+export const focus=()=> {
   if (window.innerWidth <= 700) {
     if (window.navigator.platform === "iPhone") {
       document.getElementById("homeTop").style.backgroundColor = "red"
