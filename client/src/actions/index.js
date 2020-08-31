@@ -221,9 +221,9 @@ export const focus = () => {
       if (window.navigator.platform === "iPhone" || "iPhone Simulator") {
         document.getElementById("homeTop").style.visibility = "hidden"
       }
-      /* if (window.navigator.platform === "Linux" || "null" || "Android") {
+      else if (window.navigator.platform === "Linux" || "null" || "Android") {
         document.getElementById("homeTop").style.visibility = "visible"
-      } */
+      }
     }
   }
 }
