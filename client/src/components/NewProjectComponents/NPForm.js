@@ -32,19 +32,13 @@ const NPForm = () => {
             }
             if (window.navigator.platform === "iPhone") {
                 document.getElementById("homeTop").style.visibility = "visible"
-            }
-            
-            
+            }   
         }
-        /* document.getElementsByTagName("input").scrollIntoView({block:"center"}); */
-        /* document.getElementsByName("title").style.backgroundColor="red" */
     }
     const focusOff = e => {
         if (window.innerWidth <= 700) {
             document.getElementById("homeTop").style.visibility = "visible"
         }
-        /* document.getElementsByTagName("input").scrollIntoView({block:"center"}); */
-        /* document.getElementsByName("title").style.backgroundColor="red" */
     }
     const handleSubmit = e => {
         e.preventDefault();
