@@ -224,7 +224,8 @@ export const focus = () => {
       document.getElementById("homeTop").style.visibility = "hidden"
     }
     if (OSName === "ios") {
-      document.getElementById("homeTop").style.backgroundColor = "red!important"
+      document.getElementById("homeTop").style.color = "red"
+      document.getElementById("homeTop").style.height = "200px"
     }
   } 
 
