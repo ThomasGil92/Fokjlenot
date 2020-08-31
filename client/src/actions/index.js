@@ -218,7 +218,7 @@ export const postSubtask = (subTask) => {
 export function focus() {
   if (window.innerWidth <= 700) {
     if (window.navigator.platform === "iPhone") {
-      document.getElementById("homeTop").style.visibility = "hidden"
+      document.getElementById("homeTop").style.backgroundColor = "red"
     }
     if (window.navigator.platform === "Linux" || "null" || "Android") {
       document.getElementById("homeTop").style.visibility = "visible"
