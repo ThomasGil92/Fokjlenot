@@ -202,7 +202,7 @@ const TLCols = () => {
                                         className=" btn btn-primary w-100 p-0 todo-btn-cat"
                                         style={{ fontSize: "0.8em" }}
                                     >
-                                        <span className="w-100 d-inline-block" id={t._id} onClick={pushToProd}>Commencer cette tâche</span>
+                                        <span className="w-100 d-inline-block" id={t._id} onClick={pushToProd}>Débuter cette tâche</span>
 
                                     </button>
                                 </div>
@@ -297,7 +297,7 @@ const TLCols = () => {
                                                 borderBottomLeftRadius: "3px"
                                             }}
                                         >
-                                            <span id={t._id} onClick={pushToNever} className="d-inline-block w-100">Reporter</span>
+                                            <span id={t._id} onClick={pushToNever} className="d-inline-block w-100">Mettre en pause</span>
                                         </button>
                                         <button
                                             className="btn btn-success col p-0 todo-btn-cat"
