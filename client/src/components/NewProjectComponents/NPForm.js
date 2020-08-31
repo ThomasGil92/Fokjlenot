@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
-import { setAlert,focus,focusOff } from '../../actions'
+import { setAlert, focus, focusOff } from '../../actions'
 import { postProject, setNewProject, clearProjects, setSelectedProjectId, getProjects } from '../../actions/project'
 import { updateUserProjectsRepo, clearUser, setUserInfos, getUserInfos } from '../../actions/user'
 import Alert from '../Layout/Alert'
@@ -17,8 +17,6 @@ const NPForm = () => {
         description: '',
         dead_line: ''
     })
-const focus=focus()
-const focusOff=focusOff()
 
     const handleChange = e => {
         const value = e.target.value;
@@ -28,12 +26,12 @@ const focusOff=focusOff()
     const focus = e => {
         if (window.innerWidth <= 700) {
             var elm = document.getElementById(e.target.id)
-            if (window.navigator.platform === "Linux"||"null"||"Android") {
+            if (window.navigator.platform === "Linux" || "null" || "Android") {
                 document.getElementById("homeTop").style.visibility = "hidden"
             }
             if (window.navigator.platform === "iPhone") {
                 document.getElementById("homeTop").style.visibility = "visible"
-            }   
+            }
         }
     }
     const focusOff = e => {
@@ -103,13 +101,13 @@ const focusOff=focusOff()
                         <h4 className="card-title mb-4 text-center">Nouveau projet</h4>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group mb-4">
-                                <input type="text" id="title" name="title" required value={project.title} onBlur={focusOff} onFocus={focus} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
+                                <input type="text" id="title" name="title" required value={project.title} onBlur={(e) => focusOff(e)} onFocus={(e) => focus(e)} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
                             </div>
                             <div className="form-group mb-4">
-                                <textarea id="description" name="description" type="text" rows="5" required onBlur={focusOff} onFocus={focus} value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet" />
+                                <textarea id="description" name="description" type="text" rows="5" required onBlur={(e) => focusOff(e)} onFocus={(e) => focus(e)} value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet" />
                             </div>
                             <div className="form-group mb-4">
-                                <input type="date" id="dead-line" name="dead_line" required value={project.dead_line} onBlur={focusOff} onFocus={focus} onChange={handleChange} className="form-control" placeholder="Date Limite" />
+                                <input type="date" id="dead-line" name="dead_line" required value={project.dead_line} onBlur={(e) => focusOff(e)} onFocus={(e) => focus(e)} onChange={handleChange} className="form-control" placeholder="Date Limite" />
                             </div>
                             <div className="d-md-flex justify-content-between">
                                 <Link className="d-none d-md-block d-md-flex text-dark align-items-center" to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
