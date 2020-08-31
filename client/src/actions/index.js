@@ -215,19 +215,24 @@ export const postSubtask = (subTask) => {
     })
 
 }
-export const focus=()=> {
+export const focus = (e) => {
   if (window.innerWidth <= 700) {
-    if (window.navigator.platform === "iPhone") {
-      document.getElementById("homeTop").style.backgroundColor = "red"
-    }
-    if (window.navigator.platform === "Linux" || "null" || "Android") {
-      document.getElementById("homeTop").style.visibility = "visible"
+    e.preventDefault()
+    if (document.getElementById("homeTop")) {
+      if (window.navigator.platform === "iPhone") {
+        document.getElementById("homeTop").style.visibility = "hidden"
+      }
+      if (window.navigator.platform === "Linux" || "null" || "Android") {
+        document.getElementById("homeTop").style.visibility = "visible"
+      }
     }
   }
 }
-export function focusOff(e) {
+export const focusOff = (e) => {
   if (window.innerWidth <= 700) {
-    document.getElementById("homeTop").style.visibility = "visible"
+    if (document.getElementById("homeTop")) {
+      document.getElementById("homeTop").style.visibility = "visible"
+    }
   }
 }
 
