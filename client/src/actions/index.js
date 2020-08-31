@@ -217,8 +217,8 @@ export const postSubtask = (subTask) => {
 }
 export const focus = () => {
   var OSName = "Unknown OS"
-  if (navigator.platform.indexOf("Linux") != -1){ OSName = "Linux"};
-  if (OSName="Linux"){
+  if (navigator.platform.indexOf("Linux") != -1){ OSName === "Linux"};
+  if (OSName==="Linux"){
     if (document.getElementById("homeTop")) {
       document.getElementById("homeTop").style.visibility = "hidden"
     }
