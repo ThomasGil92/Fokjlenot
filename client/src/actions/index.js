@@ -216,7 +216,7 @@ export const postSubtask = (subTask) => {
 
 }
 export const focus = (e) => {
-  if (window.innerWidth >= 700) {
+  if (window.innerWidth <= 700) {
     if (window.navigator.platform === "iPhone"||"iPhone Simulator") {
       if (document.getElementById("homeTop")) {
 
