@@ -223,10 +223,10 @@ export const focus = () => {
     if (OSName === "Linux") {
       document.getElementById("homeTop").style.visibility = "hidden"
     }
-    if (OSName === "ios") {
+    /* if (OSName === "ios") {
       document.getElementById("homeTop").style.color = "red"
       document.getElementById("homeTop").style.height = "200px"
-    }
+    } */
   } 
 
   /*if (window.innerWidth <= 700) {
