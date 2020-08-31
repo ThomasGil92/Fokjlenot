@@ -221,7 +221,7 @@ export const focus = () => {
       if (window.navigator.platform ==="Linux" || "null" || "Android" ) {
         document.getElementById("homeTop").style.visibility = "hidden"
       }
-      else if (window.navigator.platform === "iPhone" || "iPhone Simulator") {
+      else if (window.navigator.platform === "iPhone") {
         document.getElementById("homeTop").style.visibility = "visible"
       }
     }
