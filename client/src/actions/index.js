@@ -223,10 +223,10 @@ export const focus = (e) => {
         /* e.preventDefault() */
         document.getElementById("homeTop").style.visibility = "hidden"
       
-      if (window.navigator.platform === "Linux" || "null" || "Android") {
+      /*if (window.navigator.platform === "Linux" || "null" || "Android") {
         document.getElementById("homeTop").style.visibility = "visible"
       }
-    /* } */
+     } */
   }
 }
 export const focusOff = (e) => {
