@@ -219,10 +219,10 @@ export const focus = (e) => {
   if (window.innerWidth <= 700) {
     
     if (document.getElementById("homeTop")) {
-      if (window.navigator.platform === "iPhone") {/* 
+      /* 
         e.preventDefault() */
         document.getElementById("homeTop").style.visibility = "hidden"
-      }
+      
       if (window.navigator.platform === "Linux" || "null" || "Android") {
         document.getElementById("homeTop").style.visibility = "visible"
       }
