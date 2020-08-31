@@ -222,6 +222,8 @@ export const focus = () => {
     if (document.getElementById("homeTop")) {
       document.getElementById("homeTop").style.visibility = "hidden"
     }
+  }else{
+    console.log("meeerde")
   }
 
   /*if (window.innerWidth <= 700) {
