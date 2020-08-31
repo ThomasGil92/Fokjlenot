@@ -102,7 +102,7 @@ const NPForm = () => {
                         <h4 className="card-title mb-4 text-center">Nouveau projet</h4>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group mb-4">
-                                <input type="text" id="title" name="title" required value={project.title} onBlur={(e) => focusOff(e)} onFocus={focus(e)} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
+                                <input type="text" id="title" name="title" required value={project.title} onBlur={(e) => focusOff(e)} onFocus={focus} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
                             </div>
                             <div className="form-group mb-4">
                                 <textarea id="description" name="description" type="text" rows="5" required onBlur={(e) => focusOff(e)} onFocus={(e) => focus(e)} value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet" />
