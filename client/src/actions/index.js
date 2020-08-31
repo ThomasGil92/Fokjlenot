@@ -215,9 +215,8 @@ export const postSubtask = (subTask) => {
     })
 
 }
-export function focus(e) {
+export function focus() {
   if (window.innerWidth <= 700) {
-    var elm = document.getElementById(e.target.id)
     if (window.navigator.platform === "iPhone") {
       document.getElementById("homeTop").style.visibility = "hidden"
     }
