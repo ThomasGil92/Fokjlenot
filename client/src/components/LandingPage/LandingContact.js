@@ -22,7 +22,7 @@ const ContactForm = () => {
     };
     return (
         <Fragment>
-            <div className="col-12 pt-4 pb-3 mt-5 border-top bg-light ">
+            <div className="col-12 pt-4 pb-3 mt-md-5 border-top bg-light ">
                 <h3 className="text-center">Une question? Une suggestion? Votre avis m'intéresse!</h3>
                 <form
                     onSubmit={sendEmail}

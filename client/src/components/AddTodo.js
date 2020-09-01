@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
-import { postTodo, setTodosByProjectId, clearTodosId, setAlert, clearProjects, updateTodoProjectRepo, clearTodos } from '../actions'
+import { postTodo, setTodosByProjectId, clearTodosId, setAlert, focus, updateTodoProjectRepo, clearTodos } from '../actions'
 import HomeMenu from './HomePageComponents/HomeMenu'
 import Cookie from './Layout/Cookie'
 import Footer from './Layout/Footer'
@@ -69,14 +69,14 @@ const AddTodo = () => {
                         <h4 className="card-title mb-4 text-center text-fokjlenot">Nouvelle tâche</h4>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group mb-4">
-                                <input type="text" name="title" required value={todo.title} onChange={handleChange} className="form-control" placeholder="Nom de la tâche" />
+                                <input type="text" name="title" required value={todo.title} onChange={handleChange} onFocus={() => focus()} className="form-control" placeholder="Nom de la tâche" />
                             </div>
                             <div className="form-group mb-4">
-                                <textarea name="description" type="text" rows="5" value={todo.description} onChange={handleChange} className="form-control" placeholder="Description" />
+                                <textarea name="description" type="text" rows="5" value={todo.description} onChange={handleChange} onFocus={() => focus()} className="form-control" placeholder="Description (optionnel)" />
                             </div>
                             <div className="form-group mb-4">
                                 <label >Dead line:</label>
-                                <input type="date" name="dead_line" value={todo.dead_line} onChange={handleChange} className="form-control text-muted" placeholder="Date limite" />
+                                <input type="date" name="dead_line" value={todo.dead_line} onChange={handleChange} className="form-control text-muted" placeholder="Date limite (recommandé)" />
                             </div>
                             {/* <div className="form-group mb-4">
                             <label >Début de cette tâche:</label>

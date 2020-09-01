@@ -14,7 +14,7 @@ const LandingPresentationFirstBlock = () => {
 
                 </div>
                 <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                    <div className="py-md-2 col-md-10 text-center">
+                    <div className="py-md-2 col-md-10 text-center mt-2 mt-md-0">
                         <p>Ne perdez pas de temps à fouiller, grâce à <strong><i>Fokjlenot</i></strong>, visualisez rapidement vos projets et tâches en cours</p>
                     </div>
                 </div>

@@ -71,7 +71,7 @@ exports.updateProject = (req, res) => {
 exports.updateTodoRepo = (req, res) => {
     Project.findOneAndUpdate(
         { _id: req.project._id },
-        { $push: { todo: req.body.justCreatedTodo._id } }
+        { $push: { todo: req.body._id } }
     )
         .then((project, err) => {
             if (err) {

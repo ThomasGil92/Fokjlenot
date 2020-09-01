@@ -7,11 +7,13 @@ import { updateUserProjectsRepo, clearUser, setUserInfos, getUserInfos } from '.
 import Alert from '../Layout/Alert'
 import HomeMenu from '../HomePageComponents/HomeMenu'
 import Footer from '../Layout/Footer'
+import LoadingSpinner from '../Layout/LoadingSpinner'
 
 const NPForm = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const user = useSelector(state => state.user);
+    const [loading, setLoading] = useState(false)
     const [project, setFields] = useState({
         title: '',
         description: '',
@@ -43,6 +45,7 @@ const NPForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         if (sessionStorage.getItem('jwt')) {
+            setLoading(true)
             postProject(JSON.parse(sessionStorage.getItem('jwt')).user._id, JSON.parse(sessionStorage.getItem('jwt')).token, project)
                 .then(data => {
                     const projet = data
@@ -61,8 +64,9 @@ const NPForm = () => {
                             }
                         })
                         dispatch(setSelectedProjectId(data.justCreatedProject._id))
-                        dispatch(setAlert("Un nouveau projet vient d'être ajouté", "success"))
                         history.push("/first-todo")
+                        setLoading(false)
+                        dispatch(setAlert("Un nouveau projet vient d'être ajouté", "success"))
                     } else {
                         dispatch(setAlert("Ce projet éxiste déja", "danger"))
                         console.log(data.err)
@@ -92,7 +96,7 @@ const NPForm = () => {
     return (
         <div className="container-fluid vh-100 d-flex align-items-center text-dark bg-white">
             <Alert />
-
+            {loading && <LoadingSpinner />}
             <Footer anchor={"#homeTop"} />
             <HomeMenu />
             <div id="NPForm" className="row vw-100 ">
@@ -101,18 +105,18 @@ const NPForm = () => {
                         <h4 className="card-title mb-4 text-center">Nouveau projet</h4>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group mb-4">
-                                <input type="text" id="title" name="title" required value={project.title} onBlur={() => focusOff()} onFocus={() => focus()} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
+                                <input type="text" id="title" name="title" required value={project.title} /* onBlur={() => focusOff()}  */ onFocus={() => focus()} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
                             </div>
                             <div className="form-group mb-4">
-                                <textarea id="description" name="description" type="text" rows="5" required onBlur={() => focusOff()} onFocus={() => focus()} value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet" />
+                                <textarea id="description" name="description" type="text" rows="5" /* onBlur={() => focusOff()} */ onFocus={() => focus()} value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet (optionnel)" />
                             </div>
                             <div className="form-group mb-4">
-                                <input type="date" id="dead-line" name="dead_line" required value={project.dead_line} onBlur={() => focusOff()} onFocus={() => focus()} onChange={handleChange} className="form-control" placeholder="Date Limite" />
+                                <input type="date" id="dead-line" name="dead_line" required value={project.dead_line} /* onBlur={() => focusOff()} */ onFocus={() => focus()} onChange={handleChange} className="form-control" placeholder="Date Limite" />
                             </div>
                             <div className="d-md-flex justify-content-between">
-                                <Link className="d-none d-md-block d-md-flex text-dark align-items-center" to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
+                                <Link className="d-none d-md-block d-md-flex btn btn-outline-info align-items-center" to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
+                                <Link className="col-12 d-md-none d-flex justify-content-center align-items-center btn btn-outline-info mb-2 " to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
                                 <input type="submit" value="Démarrer Projet" className="btn btn-primary col-12 col-md-6" />
-                                <Link className="col-12 d-md-none d-flex justify-content-center align-items-center text-dark mt-2 " to={"/"}><i className="fas fa-angle-double-left mr-1"></i>  Revenir à l'accueil</Link>
                             </div>
                         </form>
                     </div>

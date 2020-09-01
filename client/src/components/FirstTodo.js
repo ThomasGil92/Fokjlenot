@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
-import { postTodo, updateTodoProjectRepo, } from '../actions'
+import { postTodo, updateTodoProjectRepo,focus } from '../actions'
 import { clearProjects, getProjects } from '../actions/project'
 import { getUserInfos, setUserInfos } from '../actions/user'
 import Alert from './Layout/Alert'
 import HomeMenu from './HomePageComponents/HomeMenu'
 import Footer from './Layout/Footer'
 import Cookie from './Layout/Cookie'
+import LoadingSpinner from './Layout/LoadingSpinner'
 
 const FirstTodo = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const user = useSelector(state => state.user);
     const newProject = useSelector(state => state.newProject);
+    const [loading,setLoading]=useState(false)
     const [firstTodo, setFields] = useState({
         title: '',
         description: '',
@@ -29,10 +31,11 @@ const FirstTodo = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        setLoading(true)
         postTodo(JSON.parse(sessionStorage.getItem('jwt')).user._id, JSON.parse(sessionStorage.getItem('jwt')).token, firstTodo)
             .then(data => {
                 console.log(data)
-                updateTodoProjectRepo(newProject.justCreatedProject._id, data)
+                updateTodoProjectRepo(JSON.parse(sessionStorage.getItem("selectedProjectId")), data.justCreatedTodo)
                     .then(() => {
                         dispatch(clearProjects())
                         if (sessionStorage.getItem('jwt')) {
@@ -44,9 +47,10 @@ const FirstTodo = () => {
                                         dispatch(getProjects(projectItem))
                                     })
                                 }
+                                setLoading(false)
                             })
                         }
-                        if (localStorage.getItem('jwt')) {
+                        /* if (localStorage.getItem('jwt')) {
                             getUserInfos(JSON.parse(localStorage.getItem('jwt')).user._id).then(user => {
                                 console.log(user)
                                 dispatch(setUserInfos(user))
@@ -56,7 +60,8 @@ const FirstTodo = () => {
                                     })
                                 }
                             })
-                        }
+                        } */
+                        
                         history.push("/")
                     })
 
@@ -68,7 +73,7 @@ const FirstTodo = () => {
             <Footer anchor={"#homeTop"} />
             <HomeMenu />
             <Alert />
-
+{loading && <LoadingSpinner/>}
             <Cookie />
             <div className="row vw-100 pt-5 mt-5 ">
                 <div id="FirstTodo" className="col-12 col-md-6 card mx-auto bg-orange border-0" >
@@ -76,10 +81,10 @@ const FirstTodo = () => {
                         <h4 className="card-title mb-4 text-center">Première tâche à effectuer</h4>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group mb-4">
-                                <input type="text" name="title" required value={firstTodo.title} onChange={handleChange} className="form-control" placeholder="Nom de la tâche" />
+                                <input type="text" name="title" required value={firstTodo.title} onChange={handleChange} onFocus={() => focus()} className="form-control" placeholder="Nom de la tâche" />
                             </div>
                             <div className="form-group mb-4">
-                                <textarea name="description" type="text" rows="5" value={firstTodo.description} onChange={handleChange} className="form-control" placeholder="Description de la tâche (optionel)" />
+                                <textarea name="description" type="text" rows="5" value={firstTodo.description} onChange={handleChange} onFocus={() => focus()} className="form-control" placeholder="Description de la tâche (optionnel)" />
                             </div>
                             <div className="form-group mb-4">
                                 <label >A finir pour le:</label>

@@ -22,8 +22,8 @@ const ContactForm = () => {
             })
     };
     return (
-        <div className="row d-flex justify-content-center mt-5 pt-5">
-            <div className="col-12 col-md-5 pt-md-4">
+        <div className="row d-flex justify-content-center pb-5 pb-md-0 mt-5 pt-5">
+            <div className="col-12 col-md-5 mt-5 mt-md-0 pt-md-4">
                 <h3 className="text-center">N'hésitez pas à me contacter si vous avez des questions.</h3>
                 <form
                     onSubmit={sendEmail}

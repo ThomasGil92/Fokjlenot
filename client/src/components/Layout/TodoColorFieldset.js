@@ -58,7 +58,7 @@ const TodoColorFieldset = props => {
         <Fragment>
             <div>
                 <button
-                    style={{ backgroundColor: `${props.t.bgColor}`, border: props.t.bgColor === "#FFFFFF" ? "1px solid black" : "" }}
+                    style={{ backgroundColor: `${props.t.bgColor}`, border: "1px solid #d4d5ce" }}
                     onClick={handleShowParams}
                     className="btn btn-default"
                     title="Changer de couleur de pastille"
@@ -80,7 +80,7 @@ const TodoColorFieldset = props => {
                                     type="radio"
                                     /* variant={radio.variant} */
                                     name="radio"
-                                    style={{ backgroundColor: `${radio.color}` }}
+                                    style={{ backgroundColor: `${radio.color}`,border:"2px solid #d4d5ce" }}
                                     value={radio.value}
                                     checked={radioValue === radio.value}
                                     onChange={(e) => setRadioValue(e.currentTarget.value)}

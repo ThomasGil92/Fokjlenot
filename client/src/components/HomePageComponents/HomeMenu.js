@@ -43,9 +43,9 @@ const HomeMenu = () => {
                     <button onClick={signoutClick} className="btn btn-outline-dark mb-0 py-1" >Déconnexion</button>
                 </div>
             ) : (
-                    <div className="col-md-3 d-flex justify-content-end">
+                    <div className="col-md-3 ">
                         <Link to={"/signin"} className="btn btn-outline-dark mb-0 py-1 mx-1"><span className="todoTitleFont">Se connecter</span></Link>
-                        <Link to={"/signup"} className="btn btn-outline-dark mb-0 py-1 mx-1"><span className="todoTitleFont">S'inscrire'</span></Link>
+                        <Link to={"/signup"} className="btn btn-outline-dark mb-0 py-1 mx-1"><span className="todoTitleFont">S'inscrire</span></Link>
                     </div>
                 )}
 
