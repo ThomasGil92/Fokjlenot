@@ -40,7 +40,7 @@ const AddTodo = () => {
         postTodo(JSON.parse(sessionStorage.getItem('jwt')).user._id, JSON.parse(sessionStorage.getItem('jwt')).token, todo)
             .then(data => {
                 console.log(data)
-                updateTodoProjectRepo(JSON.parse(sessionStorage.getItem('selectedProjectId')), data)
+                updateTodoProjectRepo(JSON.parse(sessionStorage.getItem('selectedProjectId')), data.justCreatedTodo)
                     .then(() => {
                         dispatch(clearTodosId())
                         dispatch(clearTodos())
