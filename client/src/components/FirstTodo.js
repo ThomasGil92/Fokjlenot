@@ -84,7 +84,7 @@ const FirstTodo = () => {
                                 <input type="text" name="title" required value={firstTodo.title} onChange={handleChange} onFocus={() => focus()} className="form-control" placeholder="Nom de la tâche" />
                             </div>
                             <div className="form-group mb-4">
-                                <textarea name="description" type="text" rows="5" value={firstTodo.description} onChange={handleChange} onFocus={() => focus()} className="form-control" placeholder="Description de la tâche (optionnel)" />
+                                <textarea name="description" type="text" rows="5" value={firstTodo.description} onChange={handleChange} onFocus={() => focus()} className="form-control" placeholder="Description de la tâche (optionnel, pas encore affichée)" />
                             </div>
                             <div className="form-group mb-4">
                                 <label >A finir pour le:</label>

@@ -8,6 +8,7 @@ import { Modal, Button } from 'react-bootstrap'
 
 const RemoveProjectButton = () => {
     const [show, setShow] = useState(false);
+    const [loading, setLoading] = useState(false);
     const todos = useSelector(state => state.todos);
     const dispatch = useDispatch()
     const history = useHistory()
@@ -15,6 +16,7 @@ const RemoveProjectButton = () => {
     const handleShow = () => setShow(true);
     const suppressProject = e => {
         e.preventDefault();
+        setLoading(true)
         suppressProjectById(JSON.parse(sessionStorage.getItem('selectedProjectId')), JSON.parse(sessionStorage.getItem('jwt')).token, JSON.parse(sessionStorage.getItem('jwt')).user._id).then((response) => {
             console.log(response)
             todos.forEach((todo => {
@@ -32,9 +34,10 @@ const RemoveProjectButton = () => {
                                 dispatch(getProjects(projectItem))
                             })
                         }
+                        setLoading(false)
                     })
                 }
-                if (localStorage.getItem('jwt')) {
+                /* if (localStorage.getItem('jwt')) {
                     getUserInfos(JSON.parse(localStorage.getItem('jwt')).user._id).then(user => {
                         console.log(user)
                         dispatch(setUserInfos(user))
@@ -44,9 +47,8 @@ const RemoveProjectButton = () => {
                             })
                         }
                     })
-                }
+                } */
                 dispatch(setAlert("Le projet a bien été supprimé", "success"))
-
                 history.push("/")
 
             })

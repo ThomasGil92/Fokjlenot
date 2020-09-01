@@ -3,7 +3,7 @@ import { clearTodos } from "../../actions"
 import { clearProjects } from "../../actions/project"
 import { clearUser, clearAuthUser } from "../../actions/user"
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const LandingMenu = () => {
     const dispatch = useDispatch();

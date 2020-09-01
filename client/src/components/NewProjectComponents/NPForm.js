@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
-import { setAlert, focus, focusOff } from '../../actions'
+import { setAlert, focus } from '../../actions'
 import { postProject, setNewProject, clearProjects, setSelectedProjectId, getProjects } from '../../actions/project'
 import { updateUserProjectsRepo, clearUser, setUserInfos, getUserInfos } from '../../actions/user'
 import Alert from '../Layout/Alert'
@@ -64,8 +64,8 @@ const NPForm = () => {
                             }
                         })
                         dispatch(setSelectedProjectId(data.justCreatedProject._id))
-                        history.push("/first-todo")
                         setLoading(false)
+                        history.push("/first-todo")
                         dispatch(setAlert("Un nouveau projet vient d'être ajouté", "success"))
                     } else {
                         dispatch(setAlert("Ce projet éxiste déja", "danger"))
@@ -108,7 +108,7 @@ const NPForm = () => {
                                 <input type="text" id="title" name="title" required value={project.title} /* onBlur={() => focusOff()}  */ onFocus={() => focus()} onChange={handleChange} className="form-control" placeholder="Nom du Projet" />
                             </div>
                             <div className="form-group mb-4">
-                                <textarea id="description" name="description" type="text" rows="5" /* onBlur={() => focusOff()} */ onFocus={() => focus()} value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet (optionnel)" />
+                                <textarea id="description" name="description" type="text" rows="5" /* onBlur={() => focusOff()} */ onFocus={() => focus()} value={project.description} onChange={handleChange} className="form-control" placeholder="Description du projet (optionnel, pas encore affichée)" />
                             </div>
                             <div className="form-group mb-4">
                                 <input type="date" id="dead-line" name="dead_line" required value={project.dead_line} /* onBlur={() => focusOff()} */ onFocus={() => focus()} onChange={handleChange} className="form-control" placeholder="Date Limite" />

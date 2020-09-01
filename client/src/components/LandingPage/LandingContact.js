@@ -1,12 +1,10 @@
 import React, { Fragment } from 'react'
 import emailjs from 'emailjs-com';
-import { useHistory } from 'react-router-dom'
 import { setAlert } from '../../actions'
 import { useDispatch } from 'react-redux'
 
 const ContactForm = () => {
     const dispatch = useDispatch()
-    const history = useHistory()
     const sendEmail = (e) => {
         e.preventDefault();
         emailjs.sendForm('gmail', 'ContactUs', e.target, 'user_4OCMAoXXWlSfnD7fgLVEP')
@@ -22,7 +20,7 @@ const ContactForm = () => {
     };
     return (
         <Fragment>
-            <div className="col-12 pt-4 pb-3 mt-md-5 border-top bg-light ">
+            <div className="col-12 pt-5 mt-md-5 mb-5 pb-5 border-top bg-light ">
                 <h3 className="text-center">Une question? Une suggestion? Votre avis m'intéresse!</h3>
                 <form
                     onSubmit={sendEmail}

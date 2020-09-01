@@ -62,7 +62,7 @@ const AddTodo = () => {
             {loading && <LoadingSpinner />}
             <HomeMenu />
             <Cookie />
-            <Footer href="#homeTop" />
+            <Footer anchor={"#homeTop"} />
             <div className="row vw-100">
                 <div id="AddTodo" className="col-12 col-md-6 mx-auto card border-0 " >
                     <div className="card-body">
@@ -72,7 +72,7 @@ const AddTodo = () => {
                                 <input type="text" name="title" required value={todo.title} onChange={handleChange} onFocus={() => focus()} className="form-control" placeholder="Nom de la tâche" />
                             </div>
                             <div className="form-group mb-4">
-                                <textarea name="description" type="text" rows="5" value={todo.description} onChange={handleChange} onFocus={() => focus()} className="form-control" placeholder="Description (optionnel)" />
+                                <textarea name="description" type="text" rows="5" value={todo.description} onChange={handleChange} onFocus={() => focus()} className="form-control" placeholder="Description (optionnel, pas encore affichée)" />
                             </div>
                             <div className="form-group mb-4">
                                 <label >Dead line:</label>

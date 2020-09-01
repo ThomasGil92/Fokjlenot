@@ -35,7 +35,7 @@ const TodosList = () => {
 
     useEffect(() => {
         init()
-    }, [dispatch])
+    }, [])
 
     return (
         <div className="container-fluid bg-white text-white">

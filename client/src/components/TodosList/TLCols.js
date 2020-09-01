@@ -101,7 +101,7 @@ const TLCols = () => {
         }
     }
 
-    const handleOnClick = e => {
+    /* const handleOnClick = e => {
         e.preventDefault();
         dispatch(clearSubtasks())
         console.log(e.target.id)
@@ -110,7 +110,7 @@ const TLCols = () => {
         if (sessionStorage.getItem("selectedTodo")) {
             dispatch(setSelectedTodo(e.target.id))
         }
-    }
+    } */
 
     return (
         <Fragment>
