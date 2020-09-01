@@ -71,7 +71,7 @@ const SignupForm = (props) => {
         )
     } else {
         return (
-            <div className="row m-0 h-100 justify-content-center text-center bg-orange d-flex align-items-center">
+            <div className="row mt-5 mt-md-0 m-0 h-100 justify-content-center text-center bg-orange d-flex align-items-center">
                 <form className='col-12 col-md-4'>
                     <h2>Créer un compte</h2>
                     <div className="form-group">
