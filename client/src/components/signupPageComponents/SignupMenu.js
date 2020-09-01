@@ -10,9 +10,9 @@ const SignupMenu = () => {
             <div className="col-12 col-md-8">
                 <h1 className="text-white mb-0 py-1 mx-auto "><Link className="navbar-brand mySpecialFont" to={"/"}>Fokjlenot</Link></h1>
             </div>
-            {/* <div className="col-8 mx-auto col-md-2">
+            <div className="d-none d-md-block col-8 mx-auto col-md-2">
                 <Link to={"/signin"} className="btn btn-outline-dark mb-0 py-1 mx-auto" >Se connecter</Link>
-            </div> */}
+            </div>
 
 
         </nav>
